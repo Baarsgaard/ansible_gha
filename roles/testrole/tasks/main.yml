@@ -1,0 +1,7 @@
+- name: Some screen print1
+  debug:
+    msg: Some
+- name: Some screen print2
+  debug:
+    msg: Some
+
