@@ -4,29 +4,29 @@ __metaclass__ = type
 DOCUMENTATION = '''
   callback: gha
   type: stdout
-  short_description: Wrap roles with ::group::role_name and ::endgroup
+  short_description: Group role/play output in Github Actions
   version_added: 0.1.0
   description:
-    - A default callback wrapper for improving the log reading experience of plays in Github Workflows.
+    - A default callback wrapper for improving the reading experience of Ansible logs in Github ACtions output.
   author: Steffen Poulsen (@raunow)
   extends_documentation_fragment:
     - default_callback
   notes:
-    - Enable plugin by defining the CI environment variable, it is defined by default in Github Workflows
+    - Enable plugin by defining the CI environment variable, it is defined by default in Github Actions
   seealso:
     - name: default – default Ansible screen output
       description: The official documentation on the B(default) callback plugin.
       link: https://docs.ansible.com/ansible/latest/plugins/callback/default.html
   requirements:
-    - set as stdout_callback in configuration
+    - Configure `stdout_callback` in ansible.cfg
   options:
     group_per_play:
       description: Group Plays instead of roles.
       ini:
         - section: callback_gha
           key: group_per_play
-      vars:
-        - name: ansible_callback_gha_group_per_play
+      env:
+        - name: ANSIBLE_CALLBACK_GHA_GROUP_PER_PLAY
       type: bool
 '''
 
