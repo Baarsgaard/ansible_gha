@@ -1,6 +1,7 @@
-- name: Another screen print1
+- name: Screen print
   debug:
-    msg: Another
-- name: Another screen print2
+    msg: Printed Message
+
+- name: Another screen print
   debug:
-    msg: Another
+    msg: Another Message

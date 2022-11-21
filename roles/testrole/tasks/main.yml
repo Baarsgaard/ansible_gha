@@ -1,7 +1,8 @@
-- name: Some screen print1
+- name: Debug module print
   debug:
-    msg: Some
-- name: Some screen print2
+    msg: message
+
+- name: screen print debug
   debug:
-    msg: Some
+    msg: Printed
 
