@@ -28,6 +28,11 @@ DOCUMENTATION = '''
       env:
         - name: ANSIBLE_CALLBACK_GHA_GROUP_PER_PLAY
       type: bool
+    disabled:
+      description: Disable plugin.
+      env:
+        - name: ANSIBLE_CALLBACK_GHA_DISABLED
+      type: bool
 '''
 
 import os
@@ -53,7 +58,7 @@ class CallbackModule(Default):
             self.print_end_group = True
     
     def __init__(self):
-        self.print_group = ('CI' in os.environ)
+        self.print_group = ('CI' in os.environ and 'ANSIBLE_CALLBACK_GHA_DISABLED' not in os.environ)
         self.print_end_group = False
         self.last_role = ""
         super(CallbackModule, self).__init__()
