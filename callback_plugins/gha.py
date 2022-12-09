@@ -7,7 +7,7 @@ DOCUMENTATION = '''
   short_description: Group role/play output in Github Actions
   version_added: 0.1.0
   description:
-    - A default callback wrapper for improving the reading experience of Ansible logs in Github ACtions output.
+    - A default callback wrapper for improving the reading experience of Ansible logs in Github Actions output.
   author: Steffen Poulsen (@raunow)
   extends_documentation_fragment:
     - default_callback
